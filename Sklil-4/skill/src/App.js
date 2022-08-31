@@ -15,7 +15,7 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <Navbar />
+      <Navbar data={userData} />
       {userData && (userData.map((users, i) => <User data={users} />)
       )}
       {userData <= 0 && <h1> Loading </h1>}

@@ -5,10 +5,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Stack } from '@mui/material';
+import Profile from './Profile';
 
 function User({ data }) {
     return (
-        <Card style={{ width: "100%", border: '2px double black', margin: 8 }}>
+        <a href={data.html_url} target="_blank"> <Card onClick={<Profile name={data.login} />} style={{ width: "100%", border: '2px double black', margin: 8 }}>
             <CardActionArea>
                 <Stack direction="row">
                     <CardMedia sx={{ width: 150, borderRadius: 50, margin: 5 }}
@@ -28,7 +29,7 @@ function User({ data }) {
                     </CardContent>
                 </Stack>
             </CardActionArea>
-        </Card>
+        </Card></a>
     )
 }
 

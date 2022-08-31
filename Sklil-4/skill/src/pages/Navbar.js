@@ -6,8 +6,9 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import SearchBar from './SearchBar';
 import MoreIcon from '@mui/icons-material/MoreVert';
+
 
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -20,7 +21,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     },
 }));
 
-export default function Navbar() {
+export default function Navbar(props) {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -42,16 +43,15 @@ export default function Navbar() {
                     >
                         Git Hub Users App
                     </Typography>
-                    <IconButton size="large" aria-label="search" color="inherit">
-                        <SearchIcon />
+                    <IconButton size="large" aria-label="search" color="inherit" className='search'>
                     </IconButton>
+                    <SearchBar placeholder="Enter git hub name" data={props.data} />
                     <IconButton
                         size="large"
                         aria-label="display more actions"
                         edge="end"
                         color="inherit"
                     >
-                        <MoreIcon />
                     </IconButton>
                 </StyledToolbar>
             </AppBar>
